@@ -33,7 +33,14 @@ VALUES (5, 'Hardik', 27, 'Bhopal', 8500.00 );
 
 INSERT INTO SampleCICDDB.CUSTOMERS (ID,NAME,AGE,ADDRESS,SALARY)
 VALUES (6, 'Komal', 22, 'MP', 4500.00 );
-
+ -- crete backup table 
+create table SampleCICDDB.CUSTOMERS_backup like sampleCICDDB.CUSTOMERS;
+  -- insert data from backup table from existing table
+insert into SampleCICDDB.CUSTOMERS_backup select * from sampleCICDDB.CUSTOMERS;
+ --  delete data from old table records
+DELETE FROM SampleCICDDB.CUSTOMERS WHERE ID = 6;
+  -- update existing table records
+UPDATE CUSTOMERS SET ADDRESS = 'Pune' WHERE ID = 5;
       -- 5. commit changes   
 -- rollback 
 COMMIT;
