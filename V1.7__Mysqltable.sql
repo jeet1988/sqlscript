@@ -40,7 +40,7 @@ insert into SampleCICDDB.CUSTOMERS_backup select * from sampleCICDDB.CUSTOMERS;
  --  delete data from old table records
 DELETE FROM SampleCICDDB.CUSTOMERS WHERE ID = 6;
   -- update existing table records
-UPDATE CUSTOMERS SET ADDRESS = 'Pune' WHERE ID = 5;
+UPDATE SampleCICDDB.CUSTOMERS SET ADDRESS = 'Pune' WHERE ID = 5;
       -- 5. commit changes   
 -- rollback 
 COMMIT;
