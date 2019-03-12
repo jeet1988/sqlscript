@@ -7,7 +7,7 @@ node {
         bat "for %%I in (*.sql) do copy %%I D:\\tools\\flyway-5.2.3\\sql"
     }
     stage('Deploy') { 
-        def flyway="D:\\flyway-5.2.3\\sql"
+        def flyway="D:\\tools\\flyway-5.2.3\\sql"
                echo "Deploying"
                bat "D:\\tools\\flyway-5.2.3\\flyway.cmd -user=root -password=root -url=jdbc:mysql://localhost:3306/sakila repair migrate validate info"
     }
