@@ -1,5 +1,5 @@
 
--- 1. start a new transaction
+-- 1. start a new transaction test
 START TRANSACTION;
 
 CREATE PROCEDURE SampleCICDDB.join_cust_custbackup() 
