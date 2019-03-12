@@ -1,1 +1,15 @@
 
+node {  
+    stage('Code Checkout'){
+         git credentialsId: '4c7df855-f275-41cc-a3e6-6ca59853e166', url: 'http://admin@bitbucket.techmahindra.com/scm/pipelines/db.git' , branch:'master' 
+    }
+    stage('Copy'){
+        bat "for %%I in (*.sql) do copy %%I D:\\tools\\flyway-5.2.3\\sql"
+    }
+    stage('Deploy') { 
+        def flyway="D:\\flyway-5.2.3\\sql"
+               echo "Deploying"
+               bat "D:\\tools\\flyway-5.2.3\\flyway.cmd -user=root -password=root -url=jdbc:mysql://localhost:3306/sakila repair migrate validate info"
+    }
+
+}
