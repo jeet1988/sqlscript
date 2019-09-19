@@ -9,7 +9,7 @@ node {
     stage('Deploy') { 
         def flyway="D:\\tools\\flyway-5.2.3\\sql"
                echo "Deploying"
-               bat "D:\\tools\\flyway-5.2.3\\flyway.cmd -user=root -password=root -url=jdbc:mysql://localhost:3306/sakila repair migrate validate info"
+               bat "D:\\tools\\flyway-5.2.3\\flyway.cmd -user=root -password=root -url=jdbc:mysql://localhost:3306/FlyWayDB repair migrate validate info"
     }
 
 }
